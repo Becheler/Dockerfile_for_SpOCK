@@ -5,7 +5,9 @@ LABEL maintainer="Arnaud Becheler" \
       version="0.0.1"
 
 # Avoid getting stuck at tzdata prompt, see https://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ="America/New_York"
+RUN apt-get install -y tzdata
 
 # Update ubunutu
 RUN apt-get update -y
