@@ -35,7 +35,7 @@ RUN apt-get install -y --no-install-recommends\
 RUN useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
 USER admin
 
-RUN git clone https://github.com/deflorio/SpOCK.git \
+RUN sudo git clone https://github.com/deflorio/SpOCK.git \
     && cd SpOCK \
     && make install_libs \
     && make install_atmo \
