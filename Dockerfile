@@ -9,7 +9,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends\
                     vim \
-                    sudo \
                     wget \
                     git \
                     gcc-9 \
@@ -31,9 +30,10 @@ RUN apt-get install -y --no-install-recommends\
                     libsdl2* \
                     libsoil*
 
-# Add none root user to get sudo in makefiles dependencies work
-RUN useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
-USER admin
+# Get sudo makefiles dependencies work, and git clone too
+RUN apt-get update && apt-get -y install sudo
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+USER docker
 
 RUN sudo git clone https://github.com/deflorio/SpOCK.git \
     && cd SpOCK \
