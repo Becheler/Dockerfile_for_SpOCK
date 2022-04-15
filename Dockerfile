@@ -64,3 +64,9 @@ RUN git clone https://github.com/deflorio/SpOCK \
     && make events \
     && cd data/cspice \
     && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
+
+# Clean to make image smaller
+RUN apt-get autoclean && \
+    apt-get autoremove && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
