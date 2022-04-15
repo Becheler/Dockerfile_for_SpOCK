@@ -12,10 +12,10 @@ The [Spacecraft Orbital Computations Kit (SpOCK)](https://github.com/deflorio/Sp
 
 ### Downloading the pre-built image from DockerHub
 
-This will save you the time of building the image from scratch everytime (see following section).
+The image has been published on [DockerHub](https://hub.docker.com/r/arnaudbecheler/spock-container) for public use. This will save you the time of building the image from scratch everytime (see following section).
 
 ```bash
-docker pull docker push arnaudbecheler/spock-container:latest
+docker pull arnaudbecheler/spock-container:latest
 ```
 To see what images are present locally, use the `docker images` command.
 
