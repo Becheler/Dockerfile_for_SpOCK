@@ -25,7 +25,12 @@ To launch an **interactive terminal** (option `-it`) of the newly created image,
 ```bash
 docker run -ti arnaudbecheler/spock-container /bin/bash
 ```
-This will open a bash session in the `/home/docker` user folder. All SpOCK binaries have been compiled and are present in the `/home/docker/bin` directory.
+This will open a bash session in the `/home/docker` user folder. 
+
+All SpOCK binaries have been compiled and are present in the `/home/docker/SpOCK/bin` directory. You can test their invocation with *e.g.*:
+```bash
+./bin/OrbitPropagator input/SimulationParameters/simparam_sample.xml
+```
 
 ### Building the Docker image on your local system using the repo Dockerfile
 
