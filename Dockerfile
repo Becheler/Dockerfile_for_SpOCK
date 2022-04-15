@@ -41,7 +41,7 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
-RUN git clone https://github.com/deflorio/SpOCK \
+RUN cd && git clone https://github.com/deflorio/SpOCK \
     && cd SpOCK \
     && make install_libs \
     && make install_atmo \
