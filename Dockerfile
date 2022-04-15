@@ -30,9 +30,11 @@ RUN apt-get install -y --no-install-recommends\
                     libsdl2* \
                     libsoil*
 
-# Get sudo makefiles dependencies work, and git clone too
+# Get sudo makefiles dependencies work, and git clone too: see here https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
 RUN apt-get update && apt-get -y install sudo
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN adduser --disabled-password --gecos '' docker
+RUN adduser docker sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
 RUN cd ~/ \
