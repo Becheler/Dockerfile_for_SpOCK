@@ -36,7 +36,7 @@ docker build -t spock-image .
 docker images
 ```
 
-### Converting Docker Images to Singularity for Use on NASA Pleiades 
+### Converting Docker Images to Singularity for Use on NASA Pleiades
 
 For security reasons, Docker containers are not supported on Pleiades, but you can [convert them 
 to Singularity containers](https://www.nas.nasa.gov/hecc/support/kb/converting-docker-images-to-singularity-for-use-on-pleiades_643.html).
