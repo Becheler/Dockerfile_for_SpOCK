@@ -4,7 +4,7 @@ Getting SpOCK working in a Docker image for a cross-platform reproducible enviro
 You will need to [install Docker] first. The current image size is 1.83 GB (around 8 times lighter than a full Ubuntu distribution), takes
 less than 10 minutes to build from scratch, and less than 1 minute to download from DockerHub.
 
-## Downloading the pre-built image from DockerHub
+### Downloading the pre-built image from DockerHub
 
 This will save you the time of building the image from scratch everytime (see following section).
 
@@ -13,14 +13,14 @@ docker pull docker push arnaudbecheler/spock-container:latest
 ```
 To see what images are present locally, use the `docker images` command.
 
-## Launching the container
+### Launching the container
 
 To launch an **interactive terminal** (option `-it`) of the newly created image, use the `docker run` command:
 ```bash
 docker run -ti anaudbecheler/spock-container /bin/bash
 ```
 
-## Building the Docker image on your local system using the repo Dockerfile
+### Building the Docker image on your local system using the repo Dockerfile
 
 That is useful to test modifications of the Dockerfile, or visualize what is actually happening when the image is built.
 It is a bit longer than pulling the pre-built image from DockerHub (it will take around 5mn).
@@ -32,7 +32,7 @@ docker build -t spock-image .
 docker images
 ```
 
-## Converting Docker Images to Singularity for Use on NASA Pleiades 
+### Converting Docker Images to Singularity for Use on NASA Pleiades 
 
 For security reasons, Docker containers are not supported on Pleiades, but you can [convert them 
 to Singularity containers](https://www.nas.nasa.gov/hecc/support/kb/converting-docker-images-to-singularity-for-use-on-pleiades_643.html).
