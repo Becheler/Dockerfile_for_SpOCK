@@ -35,7 +35,7 @@ RUN apt-get update && apt-get -y install sudo
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 USER docker
 
-RUN sudo git clone https://github.com/deflorio/SpOCK.git \
+RUN git clone https://github.com/deflorio/SpOCK.git \
     && cd SpOCK \
     && make install_libs \
     && make install_atmo \
