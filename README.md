@@ -1,6 +1,8 @@
 # Dockerfile_for_SpOCK
 
-Getting SpOCK working in a Docker image for a cross-platform reproducible environment.
+Getting [SpOCK](https://github.com/deflorio/SpOCK) working in a Docker image for a cross-platform reproducible environment.
+
+The [Spacecraft Orbital Computations Kit (SpOCK)](https://github.com/deflorio/SpOCK) is an open source tool for spacecraft mission analysis and simulation. SpOCK allows the simulation of spacecrafts' hardware, orbital and attitude dynamics, and the computations of mission events (ground station contacts, payload data-takes and eclipses). The ambition of the author is to develop an operational tool (mission analysis, flight dynamics and operations) which includes only few but accurate simulations features and which can be easily further developed and customized. For this reason the software is developed with a (hopefully) clear structure with elements which can be easily read and reproduced and without a graphical user interface. For detailed information about installation, configuration and use please read the user guide.
 
 * You will need to [get Docker](https://docs.docker.com/get-docker/) first. 
 * The current image:
