@@ -29,15 +29,19 @@ RUN apt-get install -y --no-install-recommends\
                     mesa-utils \
                     libsdl2* \
                     libsoil*
-                    
+
+# Add none root user to get sudo in makefiles dependencies work
+RUN useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
+USER admin
+
 RUN git clone https://github.com/deflorio/SpOCK.git \
     && cd SpOCK \
-    && sudo make install_libs \
-    && sudo make install_atmo \
-    && sudo make install_mag \
-    && sudo make orbit \
-    && sudo make sgp4 \
-    && sudo make attitude \
-    && sudo make events \
+    && make install_libs \
+    && make install_atmo \
+    && make install_mag \
+    && make orbit \
+    && make sgp4 \
+    && make attitude \
+    && make events \
     && cd data/cspice \
     && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
