@@ -50,7 +50,9 @@ RUN sudo apt-get install -y --no-install-recommends\
       mesa-utils \
       libsdl2* \
       libsoil* \
-    && apt-get clean -y
+      libxmu-dev \
+      libxmu-headers \
+    && sudo apt-get clean -y
 
 # Clone and build SpOCK
 RUN git clone https://github.com/deflorio/SpOCK \
@@ -66,7 +68,7 @@ RUN git clone https://github.com/deflorio/SpOCK \
     && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
 
 # Clean to make image smaller
-RUN apt-get autoclean && \
-    apt-get autoremove && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN sudo apt-get autoclean && \
+    sudo apt-get autoremove && \
+    sudo apt-get clean && \
+    sudo rm -rf /var/lib/apt/lists/*
