@@ -35,7 +35,7 @@ All SpOCK binaries have been compiled and are present in the `/home/docker/SpOCK
 ### Building the Docker image on your local system using the repo Dockerfile
 
 That is useful to test modifications of the Dockerfile, or visualize what is actually happening when the image is built.
-It is a bit longer than pulling the pre-built image from DockerHub (it will take around 5mn).
+It is a bit longer (around 10mn) than pulling the pre-built image from DockerHub (1mn).
 
 ```bash
 git clone Becheler/Dockerfile_for_SpOCK
