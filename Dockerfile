@@ -9,11 +9,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Update ubunutu
 RUN apt-get update -y
 
-### Avoid password problems with makefiles 'sudo mkdir' commands
+### Avoid password problems with makefiles 'sudo mkdir' commands: see https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
 
-# see here https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
-RUN apt-get -y install --no-install-recommends sudo \
-    && apt-get clean -y
+# Install sudo
+RUN apt-get -y install --no-install-recommends sudo && apt-get clean -y
 
 # Add a user with sudo privilegies and desactivated password
 RUN adduser --disabled-password --gecos '' docker
@@ -25,6 +24,8 @@ USER docker
 
 # Let's always start sessions there
 WORKDIR /home/docker
+
+### SpOCK dependencies and installation
 
 # SPock dependencies and general utilities
 RUN apt-get install -y --no-install-recommends\
