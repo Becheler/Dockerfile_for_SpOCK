@@ -37,7 +37,7 @@ USER docker
 
 RUN cd ~/ \
     && mkdir dev \
-    && cd dev
+    && cd dev \
     && git clone https://github.com/deflorio/SpOCK \
     && cd SpOCK \
     && make install_libs \
