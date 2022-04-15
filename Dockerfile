@@ -28,7 +28,7 @@ WORKDIR /home/docker
 ### SpOCK dependencies and installation
 
 # SPock dependencies and general utilities
-RUN apt-get install -y --no-install-recommends\
+RUN sudo apt-get install -y --no-install-recommends\
       vim \
       wget \
       git \
