@@ -31,13 +31,13 @@ RUN apt-get install -y --no-install-recommends\
                     libsoil*
                     
 RUN git clone https://github.com/deflorio/SpOCK.git \
-    cd SpOCK \
-    make install_libs \
-    make install_atmo \
-    make install_mag \
-    make orbit \
-    make sgp4 \
-    make attitude \
-    make events \
-    cd data/cspice \
-    wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
+    && cd SpOCK \
+    && make install_libs \
+    && make install_atmo \
+    && make install_mag \
+    && make orbit \
+    && make sgp4 \
+    && make attitude \
+    && make events \
+    && cd data/cspice \
+    && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
