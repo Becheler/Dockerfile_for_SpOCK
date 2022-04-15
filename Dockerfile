@@ -41,14 +41,14 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
-RUN cd && git clone https://github.com/deflorio/SpOCK \
-    && cd SpOCK \
-    && make install_libs \
-    && make install_atmo \
-    && make install_mag \
-    && make orbit \
-    && make sgp4 \
-    && make attitude \
-    && make events \
-    && cd data/cspice \
-    && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
+# RUN cd && git clone https://github.com/deflorio/SpOCK \
+#    && cd SpOCK \
+#    && make install_libs \
+#    && make install_atmo \
+#    && make install_mag \
+#    && make orbit \
+#    && make sgp4 \
+#    && make attitude \
+#    && make events \
+#    && cd data/cspice \
+#    && wget ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp
