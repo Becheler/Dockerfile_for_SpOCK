@@ -9,6 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends\
                     vim \
+                    sudo \
                     wget \
                     git \
                     gcc-9 \
