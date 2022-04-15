@@ -6,6 +6,7 @@ LABEL maintainer="Arnaud Becheler" \
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+WORKDIR home/dev
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends\
                     vim \
@@ -40,10 +41,7 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
-RUN cd home \
-    && mkdir dev \
-    && cd dev \
-    && git clone https://github.com/deflorio/SpOCK \
+RUN git clone https://github.com/deflorio/SpOCK \
     && cd SpOCK \
     && make install_libs \
     && make install_atmo \
