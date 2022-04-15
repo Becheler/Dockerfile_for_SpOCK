@@ -31,14 +31,16 @@ RUN apt-get install -y --no-install-recommends\
                     libsoil*
 
 # Get sudo makefiles dependencies work, and git clone too: see here https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
-RUN apt-get update && apt-get -y install sudo
+RUN apt-get update -y \
+    && apt-get -y install --no-install-recommends sudo \
+    && apt-get clean -y
+    
 RUN adduser --disabled-password --gecos '' docker
 RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
-RUN cd ~/ \
-    && mkdir dev \
+RUN mkdir dev \
     && cd dev \
     && git clone https://github.com/deflorio/SpOCK \
     && cd SpOCK \
