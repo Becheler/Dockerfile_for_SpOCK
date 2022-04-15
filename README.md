@@ -31,6 +31,7 @@ All SpOCK binaries have been compiled and are present in the `/home/docker/SpOCK
 ```bash
 ./bin/OrbitPropagator input/SimulationParameters/simparam_sample.xml
 ```
+To exit the container, simply use the `exit` command.
 
 ### Building the Docker image on your local system using the repo Dockerfile
 
