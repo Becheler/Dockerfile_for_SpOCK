@@ -4,7 +4,10 @@ LABEL maintainer="Arnaud Becheler" \
       description="Having SpOCK work in a Docker container compatible with the NASA Pleiades cluster using Singularity" \
       version="0.0.1"
 
+# Avoid getting stuck at tzdata prompt, see https://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image
 ARG DEBIAN_FRONTEND=noninteractive
+# This way DEBIAN_FRONTEND will be defined only while you build the image while TZ will persist at runtime.
+ENV TZ=America/New_York
 
 # Update ubunutu
 RUN apt-get update -y
