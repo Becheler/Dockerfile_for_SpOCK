@@ -21,8 +21,10 @@ To see what images are present locally, use the `docker images` command.
 
 To launch an **interactive terminal** (option `-it`) of the newly created image, use the `docker run` command:
 ```bash
-docker run -ti anaudbecheler/spock-container /bin/bash
+docker run -ti arnaudbecheler/spock-container /bin/bash
 ```
+This will open a bash session in the `/home/docker` user folder.
+>All SpOCK binaries have been compiled and are present in the `/home/docker/bin` directory.
 
 ### Building the Docker image on your local system using the repo Dockerfile
 
