@@ -7,9 +7,7 @@ LABEL maintainer="Arnaud Becheler" \
 # Avoid getting stuck at tzdata prompt, see https://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ="America/New_York"
-
-# Update ubunutu
-RUN apt-get update -y
+RUN apt-get update -y && apt-get install -y tzdata
 
 ### Avoid password problems with makefiles 'sudo mkdir' commands: see https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
 
