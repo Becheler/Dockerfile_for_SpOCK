@@ -1,8 +1,12 @@
 # Dockerfile_for_SpOCK
 
 Getting SpOCK working in a Docker image for a cross-platform reproducible environment.
-You will need to [install Docker] first. The current image size is 1.83 GB (around 8 times lighter than a full Ubuntu distribution), takes
-less than 10 minutes to build from scratch, and less than 1 minute to download from DockerHub.
+
+*You will need to [get Docker](https://docs.docker.com/get-docker/) first. 
+* The current image size:
+    * is 1.83 GB large (around 8x lighter than a full Ubuntu distribution)
+    * takes less than 10 minutes to build from scratch
+    * takes less than 1 minute to download from DockerHub.
 
 ### Downloading the pre-built image from DockerHub
 
